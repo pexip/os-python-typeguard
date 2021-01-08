@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+export PYBUILD_NAME=typeguard
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+# The following workaround is necessary because the author's name
+# contains a special character on "setup.cfg".  This triggers the
+# following error:
+#
+# dh clean --with python3 --buildsystem=pybuild
+#    dh_auto_clean -O--buildsystem=pybuild
+# I: pybuild base:217: python3.6 setup.py clean
+# Traceback (most recent call last):
+#   File "setup.py", line 9, in <module>
+#     'setuptools_scm >= 1.7.0'
+#   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 142, in setup
+#     _install_setup_requires(attrs)
+#   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 135, in _install_setup_requires
+#     dist.parse_config_files(ignore_option_errors=True)
+#   File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 564, in parse_config_files
+#     _Distribution.parse_config_files(self, filenames=filenames)
+#   File "/usr/lib/python3.6/distutils/dist.py", line 395, in parse_config_files
+#     parser.read(filename)
+#   File "/usr/lib/python3.6/configparser.py", line 697, in read
+#     self._read(fp, filename)
+#   File "/usr/lib/python3.6/configparser.py", line 1015, in _read
+#     for lineno, line in enumerate(fp, start=1):
+#   File "/usr/lib/python3.6/encodings/ascii.py", line 26, in decode
+#     return codecs.ascii_decode(input, self.errors)[0]
+# UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 127: ordinal not in range(128)
+# E: pybuild pybuild:338: clean: plugin distutils failed with: exit code=1: python3.6 setup.py clean
+# dh_auto_clean: pybuild --clean -i python{version} -p "3.6 3.7" returned exit code 13
+# make: *** [debian/rules:9: clean] Error 25
+# gbp:error: '/usr/bin/git-pbuilder' failed: it exited with 2
+override_dh_auto_clean:
+	LC_ALL=C.UTF-8 dh_auto_clean
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGELOG.rst

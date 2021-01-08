@@ -1,0 +1,26 @@
+python-typeguard (2.2.2-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Fri, 08 Jan 2021 13:47:23 +0100
+
+python-typeguard (2.2.2-1) unstable; urgency=medium
+
+  [ Joel Cross ]
+  * Upgrade upstream to 2.2.2
+  * Bump standards-version and debhelper-compat
+
+  [ Sergio Durigan Junior ]
+  * Run "dh_auto_clean" with LC_ALL=C.UTF-8.
+    This is necessary because the author's name contains a special
+    character in "setup.cfg", which causes an error when running "python3
+    setup.py clean".
+
+ -- Joel Cross <joel@kazbak.co.uk>  Mon, 21 Jan 2019 23:18:27 +0000
+
+python-typeguard (2.1.4-1) unstable; urgency=medium
+
+  * Initial release (Closes: #897419)
+
+ -- Joel Cross <joel@kazbak.co.uk>  Wed, 02 May 2018 11:17:21 +0100
