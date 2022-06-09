@@ -1,9 +1,10 @@
-python-typeguard (2.2.2-1.1) unstable; urgency=medium
+python-typeguard (2.2.2-2) unstable; urgency=medium
 
-  * Non maintainer upload by the Reproducible Builds team.
-  * No source change upload to rebuild on buildd with .buildinfo files.
+  * debian/control
+    - point VCS to the new location for DPT
+    - update team name and email address
 
- -- Holger Levsen <holger@debian.org>  Fri, 08 Jan 2021 13:47:23 +0100
+ -- Sandro Tosi <morph@debian.org>  Thu, 09 Jun 2022 14:23:48 -0400
 
 python-typeguard (2.2.2-1) unstable; urgency=medium
 
