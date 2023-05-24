@@ -1,8 +1,9 @@
 Source: python-typeguard
 Section: python
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Joel Cross <joel@kazbak.co.uk>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Joel Cross <joel@kazbak.co.uk>
 Build-Depends: debhelper (>= 12),
                debhelper-compat (= 12),
                dh-python,
@@ -14,6 +15,7 @@ Homepage: https://github.com/agronholm/typeguard
 Vcs-Git: https://salsa.debian.org/python-team/modules/python-typeguard.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/python-typeguard
 Testsuite: autopkgtest-pkg-python
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
 
 Package: python3-typeguard
 Architecture: all
