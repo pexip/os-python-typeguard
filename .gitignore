@@ -2,7 +2,7 @@
 .pydevproject
 .idea
 .tox
-.coverage
+.coverage*
 .cache
 .eggs/
 *.egg-info/
@@ -11,3 +11,6 @@ __pycache__/
 docs/_build/
 dist/
 build/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/

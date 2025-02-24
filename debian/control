@@ -3,21 +3,26 @@ Section: python
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Joel Cross <joel@kazbak.co.uk>
-Build-Depends: debhelper (>= 12),
-               debhelper-compat (= 12),
-               dh-python,
-               python3-all,
-               python3-setuptools,
-               python3-setuptools-scm
-Standards-Version: 4.3.0
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-python3,
+ python3-all,
+ pybuild-plugin-pyproject,
+ python3-pytest,
+ mypy,
+ python3-setuptools,
+ python3-setuptools-scm,
+ python3-typing-extensions (>= 4.10.0),
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
 Homepage: https://github.com/agronholm/typeguard
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-typeguard.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-typeguard
-Testsuite: autopkgtest-pkg-python
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: python3-typeguard
 Architecture: all
-Depends: ${python3:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${python3:Depends}
 Description: Run-time type checker for Python
  This library provides run-time type checking for functions defined with
  argument type annotations. This can be done in one of three ways:
