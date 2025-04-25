@@ -15,7 +15,7 @@ Homepage: https://github.com/agronholm/typeguard
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-typeguard.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-typeguard
 Testsuite: autopkgtest-pkg-python
-XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
+XS-Pexip-Upstream: http://deb.debian.org/debian/ trixie
 
 Package: python3-typeguard
 Architecture: all
